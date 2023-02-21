@@ -10,7 +10,7 @@ Login to your Synology NAS and do the following:
 2a. In the **General** tab, in the **Task** field, enter _Trilium_. From the **User** list, select ***root***. Uncheck the **Enabled** option.
 2b. In the **Schedule** tab, select ***Run on the following date***, set the date to today's date, and select ***Do not repeat***.
 2c. In the ***Task Settings*** tab, optionally setup notifications to the email address of your choice.
-2d. In the ***Run command*** section, enter the following script. You will need to change the mapped port value, 8482, if that port is not available on your NAS, or you just prefer to use a different port.
+2d. In the ***Run command*** section, enter the following script. You will need to change the mapped port value, 8482, if that port is not available on your NAS, or you just prefer to use a different port. The rest of this document refers to this port as _<external_port>_, which is the port that your NAS makes available to external clients.
 ```sh
         docker run -d \
             --name trilium \
@@ -26,7 +26,7 @@ On completion of the previous step, the **Create task** dialog closes, and you s
 1. Click on the _Trilium_ row, and press the **Run** menu item. Click **Yes** when the confirmation dialog pops up.
 2. Go to the **Docker** application and verify that _Trilium_ is listed as a container. It should be in the _Running_ state.
 ## Setup a Reverse Proxy
-At this point a Trilium container is up and running on your NAS, but you won't be able to access it over the local network. To enable local network access, you'll need to configure a reverse proxy.
+At this point, a Trilium container is up and running on your NAS. You can skip to the next section and try to connect to Trilium via a web browser via _http://<NAS_ip>:<external_port>_ or _http://<NAS_hostname>:<external_port>_. But if those fail (and my experience is that they will), you will need to configure a reverse proxy, as described in this section.
 1. Go to **Control Panel>Login Portal>Advanced**. Click the **Reverse Proxy** button and then the **Create** button. 
 2. In the **Reverse Proxy Rules** dialog that pops up:
 2.a In the **General** section, enter _Trilium_ for **Reverse Proxy Name**.
