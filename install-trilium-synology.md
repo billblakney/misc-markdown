@@ -1,8 +1,9 @@
 # Installing Trilium on a Synology NAS
 The goal of this guide is to configure and run a Trilium server on a Synology NAS, and configure it so that it can be accessed by the local network, by running Trilium from a web browser on the local network, or from an installed Trilium desktop client.
+
+These notes are based on the following article:  [How To Install Trilium On Your Synology NAS With Docker ](https://neellik.com/how-to-install-trilium-on-your-synology-nas-with-docker/)
+
 ## Setup a Docker Task
-[How To Install Trilium On Your Synology NAS With Docker
-](https://neellik.com/how-to-install-trilium-on-your-synology-nas-with-docker/)
 Login to your Synology NAS and do the following:
 1. In **File Station**, create a new `trilium` folder under `docker`, i.e. `/docker/trilium`.
 2. Go to **Control Panel>Task Scheduler**. Select **Create**, then **Scheduled Task -> User-defined script**. This brings up the **Create task** dialog.
